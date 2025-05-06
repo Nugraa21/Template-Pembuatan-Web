@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!! -->
+     <link rel="stylesheet" href="assets/css/backup/data.css">
+    <!-- !!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- ---------- css ---------- -->
+    <!-- <link rel="stylesheet" href="assets/css/styles.css">  -->
+    <!-- <link rel="stylesheet" href="assets/css/responsif.css"> -->
+    <!-- ---------- icon ---------- -->
+     <link rel="icon" href="assets/media/icon/code.png">
+     <!-- ---------- Meta ---------- -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ---------- Title ---------- -->
+    <title>Kobe</title>
+</head>
+<body>
+<nav>
+    <div class="container">
+        <h1>Nugra.template</h1>
+        <p>Template semantik code </p>
+        
+        <div class="buttons">
+            <button id="light-theme">Light Mode</button>
+            <button id="dark-theme">Dark Mode</button>
+        </div>
+    </div>
+<!-- js  -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/tema.js"></script>
+<!-- server -->
+<script>
+    const eventSource = new EventSource('http://localhost:3001/refresh');
+    eventSource.onmessage = () => {
+        location.reload();
+    };
+</script>
+
+</body>
+</html>

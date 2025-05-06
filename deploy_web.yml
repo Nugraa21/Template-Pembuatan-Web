@@ -1,0 +1,44 @@
+---
+- name: Deploy HTML, CSS, and JS Web Application
+  hosts: web_servers
+  become: yes
+  tasks:
+    - name: Install Nginx (Web Server)
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy HTML file
+      copy:
+        src: ./my-web-app/index.html
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Deploy CSS file
+      copy:
+        src: ./my-web-app/style.css
+        dest: /var/www/html/style.css
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Deploy JS file
+      copy:
+        src: ./my-web-app/script.js
+        dest: /var/www/html/script.js
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Restart Nginx to apply changes
+      service:
+        name: nginx
+        state: restarted

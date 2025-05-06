@@ -1,0 +1,54 @@
+:root {
+    --font-family: 'Arial', sans-serif;
+    --font-size: 16px;
+    --padding: 10px;
+    --margin: 20px;
+    --border-radius: 5px;
+  }
+  
+  /* Light mode variables */
+  :root.light-mode {
+    --bg-color: #f5f5f5;
+    --text-color: #222222;
+    --button-bg: #4caf50;
+    --button-text: #ffffff;
+  }
+  
+  /* Dark mode variables */
+  :root.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --button-bg: #ff5722;
+    --button-text: #000000;
+  }
+  
+/* Main body  */
+  body {
+    background-color: var(--bg-color, #fff);  /* fallback to white if not set */
+    color: var(--text-color, #000);  /* fallback to black if not set */
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    margin: var(--margin);
+    padding: var(--padding);
+  }
+  
+/* Main  */
+  .container {
+    text-align: center;
+  }
+  
+  .buttons button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: var(--padding);
+    margin: var(--margin);
+    font-size: var(--font-size);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+  }
+  
+  .buttons button:hover {
+    opacity: 0.8;
+  }
+  
